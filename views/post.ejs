@@ -7,7 +7,9 @@
       <title>
             <%= post.title %>
       </title>
+      <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
@@ -29,7 +31,8 @@
             <h2 class="mt-4">Add a comment</h2>
             <form action="/comments/<%= post._id %>" method="POST">
                   <div class="form-group">
-                        <textarea class="form-control" id="body" placeholder="Start writing your comment.." name="body" rows="1" required></textarea>
+                        <div id="comment-editor"></div>
+                        <textarea id="comment-body" name="body" style="display: none;"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary">Add Comment</button>
             </form>
@@ -37,11 +40,30 @@
                   <h2>Comments</h2>
                   <% comments.forEach(function(comment) { %>
                         <li class="list-group-item">
-                              <%= comment.body %>
+                              <%- comment.body %>
                         </li>
                         <% }); %>
             </ul>
       </div>
+
+      <script>
+            var quill = new Quill('#comment-editor', {
+                  theme: 'snow',
+                  placeholder: 'Start writing your comment...',
+                  modules: {
+                        toolbar: [
+                              [{ 'header': [1, 2, false] }],
+                              ['bold', 'italic', 'underline'],
+                              [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                        ]
+                  }
+            });
+
+            $('form').submit(function (event) {
+                  var htmlContent = quill.root.innerHTML;
+                  $('#comment-body').val(htmlContent);
+            });
+      </script>
 </body>
 
 </html>
