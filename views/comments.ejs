@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Comments</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+      <div class="container">
+            <h2 class="mt-4">Comments</h2>
+            <form action="/comments/<%= postId %>" method="POST">
+                  <div class="form-group">
+                        <label for="body">Comment</label>
+                        <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Add Comment</button>
+            </form>
+            <ul class="list-group mt-4">
+                  <% comments.forEach(function(comment) { %>
+                        <li class="list-group-item">
+                              <%= comment.body %>
+                        </li>
+                        <% }); %>
+            </ul>
+      </div>
+</body>
+
+</html>
