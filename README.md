@@ -8,6 +8,7 @@ A simple web application for creating posts and commenting on them, built using 
 - [Screenshots](#screenshots)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Why MongoDB](#whymongodb)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -41,6 +42,11 @@ The Post-Comments Service is a web application where users can create posts and 
 - **EJS**: Embedded JavaScript templates for rendering views.
 - **dotenv**: Module for loading environment variables from a `.env` file.
 - **nodemon**: Module for automatically rerunning the server when any change gets detected
+
+## Why MongoDB is used?
+
+- To decide on an appropriate way to store posts and comments, MongoDB seemed an excellent choice due to its flexibility, scalability, and document-oriented data model.
+- MongoDB is a NoSQL database that stores data in JSON-like documents, making it well-suited for storing nested data structures such as posts and comments.
 
 ## Getting Started
 
