@@ -83,6 +83,7 @@ The Post-Comments Service is a web application where users can create posts and 
    ```bash
    npm run dev
    ```
+### Open "HTTP://localhost:{PORT}/" for the home page 
 
 ## API Endpoints
 
