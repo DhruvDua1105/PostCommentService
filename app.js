@@ -17,6 +17,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+//Home Page
+app.get('/', (req, res) => {
+      res.render('home'); 
+});
 
 // Routes for the project
 app.use('/posts', postRoutes);
