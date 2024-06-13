@@ -6,7 +6,7 @@ const postRoutes = require('./routes/posts');
 const commentRoutes = require('./routes/comments');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 //configuration to use EJS
 app.set('view engine', 'ejs');
