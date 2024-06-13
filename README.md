@@ -2,6 +2,9 @@
 
 A simple web application for creating posts and commenting on them, built using Node.js and MongoDB.
 
+## Deployed Link
+https://postcommentservice-2.onrender.com/
+
 ## Table of Contents
 
 - [Introduction](#introduction)
